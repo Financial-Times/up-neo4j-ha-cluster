@@ -11,6 +11,7 @@ TOKEN_URL = "$(curl --connect-timeout 5 -s https://discovery.etcd.io/new?size=3)
 TOKEN_URL = "${TOKEN_URL:?Failed to get etcd2 token URL}"
 NEO_EXTRA_CONF_URL = "${NEO_EXTRA_CONF_URL:?Neo4J Extra Conf URL not provided.}"
 AWS_DEFAULT_REGION = "${AWS_DEFAULT_REGION:?AWS Region not set.}"
+ENVIRONMENT_TYPE = "${ENVIRONMENT_TYPE:?Environment type not set.}"
 
 case "$AWS_DEFAULT_REGION" in
     eu-west-1) 
@@ -36,6 +37,11 @@ esac
 
 read -r -d '' CF_PARAMS <<EOM
 [
+    { 
+        "ParameterKey": "TagEnvironment",
+        "ParameterValue": "${ENVIRONMENT_TYPE}",
+        "UsePreviousValue": false
+    },
     { 
         "ParameterKey": "ImageId",
         "ParameterValue": "${AMI}",

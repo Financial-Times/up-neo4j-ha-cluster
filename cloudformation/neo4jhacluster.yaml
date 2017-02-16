@@ -29,6 +29,15 @@ Metadata:
       - SplunkHecURL
       - SplunkHecToken
       - ExtraNeoConf
+    - Label: FT standard tagging
+      Parameters:
+      - TagEnvironment
+      - TagTeamDL
+      - TagSystemCode
+      - TagIpCode
+      - TagDescription
+      - TagName
+      - TagStopSchedule
 
 
 
@@ -73,7 +82,7 @@ Parameters:
   ImageId:
     Description: The CoreOS AMI to be used.
     Type: AWS::EC2::Image::Id
-    Default: ami-1eddf56d
+    Default: ami-ac8fd4ca
   IamInstanceProfile:
     Description: What IAM profile to give to this instance - for future use. Currently has to be FT-Linux-Role
     Type: String
