@@ -35,8 +35,8 @@ docker run \
 
 ## Attaching a delivery cluster to Neo4j
 - Once your Neo4j cluster is online and accessible, you will need to set two etcd keys in the delivery cluster.
-- `/ft/config/neo4j/read_write_url` - set this to the write ALB URL
-- `/ft/config/neo4j/read_only_url` - set this to the read-only ALB URL
+  - `/ft/config/neo4j/read_write_url` - set this to the write ALB URL
+  - `/ft/config/neo4j/read_only_url` - set this to the read-only ALB URL
 - Example for Pre-Prod UK:
 ```
 etcdctl set /ft/config/neo4j/read_write_url http://upp-pre-prod-uk-data-write-alb-up.ft.com/db/data/
