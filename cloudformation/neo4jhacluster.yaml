@@ -444,7 +444,7 @@ Resources:
               "      fleetctl list-units | tail -n +2 | cut -f 1 | tr "\n" " " > /home/core/services.list\n",
               "      _services(){\n",
               "           local cur=${COMP_WORDS[COMP_CWORD]}\n",
-              "           COMPREPLY=( $(compgen -W "$(<~/services.list)" -- ${cur}) )/n",
+              "           COMPREPLY=( $(compgen -W "$(<~/services.list)" -- ${cur}) )\n",
               "      }\n",
               "      complete -F _services fcres\n",
               "      complete -F _services fcjf\n",
