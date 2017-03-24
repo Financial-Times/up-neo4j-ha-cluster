@@ -99,11 +99,11 @@ addUser() {
   file { \"${USERHOMEROOT}/$username/.ssh/config\":
   ensure => 'file',
   content => \"Host *-tunnel-up.ft.com
-                 User core
-                 ForwardAgent yes
-                 StrictHostKeyChecking no
-                 UserKnownHostsFile /dev/nul
-             \",
+  User core
+  ForwardAgent yes
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  \",
   owner => \"${username}\",
   group => \"${username}\",
   mode => \"600\",
