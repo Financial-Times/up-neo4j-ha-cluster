@@ -94,6 +94,19 @@ addUser() {
   owner => \"${username}\",
   group => \"${username}\",
   mode => \"400\",
+  }
+  
+  ile { \"${USERHOMEROOT}/$username/.ssh/config\":
+  ensure => 'file',
+  content => \"Host *-tunnel-up.ft.com
+                 User core
+                 ForwardAgent yes
+                 StrictHostKeyChecking no
+                 UserKnownHostsFile /dev/nul
+             \",
+  owner => \"${username}\",
+  group => \"${username}\",
+  mode => \"600\",
   }"
 }
 
