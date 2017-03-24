@@ -102,8 +102,7 @@ addUser() {
   User core
   ForwardAgent yes
   StrictHostKeyChecking no
-  UserKnownHostsFile /dev/null
-  \",
+  UserKnownHostsFile /dev/null\",
   owner => \"${username}\",
   group => \"${username}\",
   mode => \"600\",
