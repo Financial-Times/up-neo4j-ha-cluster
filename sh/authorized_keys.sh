@@ -96,7 +96,7 @@ addUser() {
   mode => \"400\",
   }
   
-  ile { \"${USERHOMEROOT}/$username/.ssh/config\":
+  file { \"${USERHOMEROOT}/$username/.ssh/config\":
   ensure => 'file',
   content => \"Host *-tunnel-up.ft.com
                  User core
